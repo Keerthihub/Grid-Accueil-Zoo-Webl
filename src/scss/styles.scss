@@ -31,10 +31,11 @@ header {
     width: 66.66%;
     color: #d9dadb;
     background: #fff;
+    position: relative;
 
-    &:hover {
-      color: #fff;
-      background-color: #E0E1E2;
+    .hover {
+      color: green;
+      background-color: red;
     }
 
     .logo {
@@ -47,17 +48,84 @@ header {
       color: #000;
     }
 
-    .expanded {
-      cursor: auto;
+    .transparent-button {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .close-panel-button {
+        right: calc(33.33vw + 1rem);
+        position: fixed;
+        pointer-events: auto;
+        z-index: 2;
+        top: 0;
+        width: 3rem;
+        height: 3rem;
+        transition: transform .25s ease, -webkit-transform .25s ease;
+      }
+
+    .button-cross {
+      font-size: 2rem;
     }
 
+
+    .header-pannel, .expanded{
+      overflow-x: hidden;
+      overflow-y: auto;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      padding-bottom: 140px;
+      background-color: #E0E1E2;
+      color: #000;
+      pointer-events: auto;
+      cursor: auto;
+
+
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        border-bottom: 1px solid #000;
+        background-color: #E0E1E2;
+        padding-bottom: 1rem;
+
+        &:nth-child(5) {
+          border-bottom: none;
+        }
+
+        .p-title {
+          display: inline-block;
+          width: 11.66%;
+          padding: 0 .75rem;
+        }
+
+        .pannel-section {
+          width: 66.66%;
+          padding: .75rem;
+          font-size: 14px;
+          line-height: 1.1rem;
+        }
+
+        p, ul {
+          margin-bottom: 1rem;
+        }
+      }
+
+          }
+
     .menu-about {
-      display: flex;
+      display: block;
       flex-direction: row;
       width: 100%;
       height: 3rem;
       line-height: 2.75rem;
     }
+
     span {
       display: inline-block;
       margin-right: 3rem;
@@ -141,7 +209,6 @@ section {
     text-transform: uppercase;
     text-decoration: none;
     color: #000;
-
   }
 }
 
